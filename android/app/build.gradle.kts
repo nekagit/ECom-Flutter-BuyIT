@@ -8,7 +8,7 @@ plugins {
 android {
     namespace = "com.frontend.timeit"
     compileSdk = flutter.compileSdkVersion
-    ndkVersion = flutter.ndkVersion
+    ndkVersion = "29.0.13113456" // or whatever version you have installed
 
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_11
