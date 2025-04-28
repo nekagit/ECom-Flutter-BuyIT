@@ -2,26 +2,21 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
 import 'package:iconsax/iconsax.dart';
+import 'package:timeit/features/authentication/screens/password/forget_password.dart';
 import 'package:timeit/features/authentication/screens/signup/signup.dart';
 import 'package:timeit/utils/constants/sizes.dart';
 import 'package:timeit/utils/constants/text_strings.dart';
-
-import '../../../../../utils/helpers/helper_functions.dart';
 
 class LoginForm extends StatelessWidget {
   const LoginForm({super.key});
 
   @override
   Widget build(BuildContext context) {
-    final dark = THelperFunctions.isDarkMode(context);
-
     return Column(
       children: [
         Form(
           child: Padding(
-            padding: const EdgeInsets.symmetric(
-              vertical: TSizes.spaceBtwSections,
-            ),
+            padding: const EdgeInsets.symmetric(vertical: TSizes.spaceBtwSections),
             child: Column(
               children: [
                 TextFormField(
@@ -50,7 +45,7 @@ class LoginForm extends StatelessWidget {
                     ),
 
                     TextButton(
-                      onPressed: () {},
+                      onPressed: () => Get.to(() => const ForgetPasswordScreen()),
                       child: const Text(TTexts.forgetPassword),
                     ),
                   ],
@@ -59,10 +54,7 @@ class LoginForm extends StatelessWidget {
 
                 SizedBox(
                   width: double.infinity,
-                  child: ElevatedButton(
-                    onPressed: () {},
-                    child: const Text(TTexts.signIn),
-                  ),
+                  child: ElevatedButton(onPressed: () {}, child: const Text(TTexts.signIn)),
                 ),
                 const SizedBox(height: TSizes.spaceBtwItems),
 

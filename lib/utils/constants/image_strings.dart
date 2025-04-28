@@ -11,4 +11,7 @@ class TImages {
       'assets/images/onboarding/LoginPic2.png';
   static const String onBoardingImage3 =
       'assets/images/onboarding/LoginPic3.gif';
+
+  static const String singupEmailVerification =
+      'assets/images/signup/EmailVerification.png';
 }
