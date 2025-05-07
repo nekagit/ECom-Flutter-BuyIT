@@ -24,7 +24,7 @@ class ResetPasswordScreen extends StatelessWidget {
           child: Column(
             children: [
               Image(
-                image: const AssetImage(TImages.singupEmailVerification),
+                image: const AssetImage(TImages.deliveredEmailIllustration),
                 width: THelperFunctions.screenWidth() * 0.6,
               ),
               const SizedBox(height: TSizes.spaceBtwSections),
@@ -41,10 +41,7 @@ class ResetPasswordScreen extends StatelessWidget {
                 textAlign: TextAlign.center,
               ),
               const SizedBox(height: TSizes.spaceBtwSections),
-              SizedBox(
-                width: double.infinity,
-                child: ElevatedButton(onPressed: () {}, child: const Text(TTexts.done)),
-              ),
+              SizedBox(width: double.infinity, child: ElevatedButton(onPressed: () {}, child: const Text(TTexts.done))),
               const SizedBox(height: TSizes.spaceBtwItems),
               SizedBox(
                 width: double.infinity,

@@ -19,10 +19,7 @@ class VerifyEmailScreen extends StatelessWidget {
       appBar: AppBar(
         automaticallyImplyLeading: false,
         actions: [
-          IconButton(
-            onPressed: () => Get.offAll(() => const LoginScreen()),
-            icon: const Icon(CupertinoIcons.clear),
-          ),
+          IconButton(onPressed: () => Get.offAll(() => const LoginScreen()), icon: const Icon(CupertinoIcons.clear)),
         ],
       ),
       body: SingleChildScrollView(
@@ -32,16 +29,12 @@ class VerifyEmailScreen extends StatelessWidget {
             children: [
               /// Image
               Image(
-                image: const AssetImage(TImages.singupEmailVerification),
+                image: const AssetImage(TImages.deliveredInPlaneIllustration),
                 width: THelperFunctions.screenWidth() * 0.6,
               ),
               const SizedBox(height: TSizes.spaceBtwSections),
               // Title
-              Text(
-                TTexts.confirmEmail,
-                style: Theme.of(context).textTheme.headlineMedium,
-                textAlign: TextAlign.center,
-              ),
+              Text(TTexts.confirmEmail, style: Theme.of(context).textTheme.headlineMedium, textAlign: TextAlign.center),
               const SizedBox(height: TSizes.spaceBtwItems),
               Text(
                 'support@codingwithn.com',
@@ -63,7 +56,7 @@ class VerifyEmailScreen extends StatelessWidget {
                   onPressed:
                       () => Get.to(
                         () => SuccessScreen(
-                          image: TImages.singupEmailVerification,
+                          image: TImages.deliveredInPlaneIllustration,
                           title: TTexts.accountCreated,
                           subtitle: TTexts.accountCreatedSubtitle,
                           onPressed: () => Get.to(() => const LoginScreen()),
