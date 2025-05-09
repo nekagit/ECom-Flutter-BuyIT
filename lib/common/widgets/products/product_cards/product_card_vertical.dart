@@ -59,15 +59,23 @@ class ProductCardVertical extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                // Product Title
-                const ProductTitleText(title: "Green Nike Air Shoes", maxLines: 2, smallSize: true, textAlign: TextAlign.left),
+                // Product Title - Limited to 1 line to save space
+                const ProductTitleText(title: "Green Nike Air Shoes", maxLines: 1, smallSize: true, textAlign: TextAlign.left),
 
                 const SizedBox(height: TSizes.spaceBtwItems / 2),
 
-                // Brand Name & Verification
+                // Brand Name & Verification - in a constrained Row
                 Row(
+                  mainAxisSize: MainAxisSize.min,
                   children: [
-                    Text('Nike', overflow: TextOverflow.ellipsis, maxLines: 1, style: Theme.of(context).textTheme.labelMedium),
+                    Flexible(
+                      child: Text(
+                        'Nike',
+                        overflow: TextOverflow.ellipsis,
+                        maxLines: 1,
+                        style: Theme.of(context).textTheme.labelMedium,
+                      ),
+                    ),
                     const SizedBox(width: TSizes.xs),
                     const Icon(Iconsax.verify5, color: TColors.primary, size: TSizes.iconXs),
                   ],
@@ -78,7 +86,22 @@ class ProductCardVertical extends StatelessWidget {
                 // Price
                 Text('\$35.5', maxLines: 1, overflow: TextOverflow.ellipsis, style: Theme.of(context).textTheme.headlineSmall),
 
-                const SizedBox(height: TSizes.spaceBtwItems / 2),
+                Expanded(
+                  child: Container(
+                    decoration: const BoxDecoration(
+                      color: TColors.dark,
+                      borderRadius: BorderRadius.only(
+                        topLeft: Radius.circular(TSizes.cardRadiusMd),
+                        bottomRight: Radius.circular(TSizes.productImageRadius),
+                      ),
+                    ),
+                    child: SizedBox(
+                      width: TSizes.iconLg * 1.2,
+                      height: TSizes.iconLg * 1.2,
+                      child: const Icon(Iconsax.add, color: TColors.white),
+                    ),
+                  ),
+                ),
               ],
             ),
           ),
